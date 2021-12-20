@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158644980-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-158644980-1');
+    </script>
+    <meta name="google-site-verification" content="uhUyM3TEfd0BDXlEWA7d-qMrpnSEd2Hrgdk6zqH37kE" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sorting visualizer">
+    <meta name="theme-color" content="#1287A5">
+    <meta name="apple-mobile-web-app-status-bar" content="#1287A5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="apple-touch-icon" href="./images/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <title>SORTING VISUALIZER</title>
+</head>
+<body>
+    <div id="main">
+        <nav>
+            <div class="title">
+                Sorting Visualizer
+            </div>
+            <div class="menu">
+                <select name="algo" id="algo">
+                    <option value="0">Select Algorithm</option>
+                    <optgroup label="Comparison based Techniques">
+                        <option value="1">Bubble Sort</option>
+                        <option value="2">Insertion Sort</option>
+                        <option value="3">Selection Sort</option>
+                        <option value="4">Modified Bubble Sort</option>
+                       
+                    </optgroup>
+                    <optgroup label="Divide & Conquer Techniques">
+                        <option value="5">Quick Sort</option>
+                        <option value="6">Merge Sort</option>
+                       
+
+                    </optgroup>
+  
+                </select>
+                <input type="number" id="num" value=18 placeholder="Elements" inputmode="numeric" />
+            </div>
+        </nav>
+        <div class="controls">
+            <p class="custom-array">
+                <button onclick="displayModal()">Enter your own array ?</button>
+            </p>
+            <button onclick="generateElements()">Generate</button>
+            <button id="sortBtn" onclick="sortElements()">SORT</button>
+        </div>
+        <p class="swapCount">Number of swaps: <span id="cnt">0</span></p>
+        
+        <div class="array"></div>
+    </div>
+    <div class="modal">
+        <div class="close-modal" onclick="closeModal()">❌</div>
+        <h2>Enter your array</h2>
+        <p>eg... 43, 164, 292, 93, 362, 80</p>
+        <div>
+            <input type="text" id="custom-arr" inputmode="numeric"/>
+        </div>
+        <p style="color: rgb(34, 54, 73); font-size:12px;">* Make sure you enter array in given format <br/> (Comma separated values) <br/>(Range -> 1 to 400)</p>
+        <button onclick="addCustomElements()">Done !</button>
+    </div>
+
+
+    <h2> BUBBLE SORT</h2>
+    <p>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list,
+         compares adjacent elements and swaps them if they are in the wrong order.
+         The pass through the list is repeated until the list is sorted. The algorithm, 
+         which is a comparison sort, is named for the way smaller or larger elements "bubble" 
+         to the top of the list. Although the algorithm is simple, it is too slow and impractical for  most problems </p>
+
+        <h3> Performance</h3>
+        <B><p>Worst-case time complexity	O(n*n)<br>
+            Average time complexity 	O(n*n)<br>
+            Best-case time complexity	O(n)<br>
+            Worst-case space complexity	O(1)</p></B>
+            <br>
+
+            <h2>INSERTION SORT</h2>
+            <p>Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands.
+                 The array is virtually split into a sorted and an unsorted part. 
+                 Values from the unsorted part are picked and placed at the correct position in the sorted part.</p>
+
+                 <h3> Performance</h3>
+       <B> <p>Worst-case time complexity	O(n^2)<br>
+            Average time complexity 	O(n^2)<br>
+            Best-case time complexity	O(n)<br>
+            Worst-case space complexity	O(1)</p></B>
+            <br>
+            
+            <h2>SELECTION SORT</h2>
+            <p>Selection sort is a simple sorting algorithm. This sorting algorithm is an in-place comparison-based algorithm in
+                 which the list is divided into two parts, the sorted part at the left end and the unsorted part at the right end.
+                  Initially, the sorted part is empty and the unsorted part is the entire list.The smallest element is selected from the unsorted array and swapped with the leftmost element, and that element 
+                becomes a part of the sorted array. This process continues moving unsorted array boundary by one element to the right.</p>
+                <h3> Performance</h3>
+       <B> <p>Worst-case time complexity	O(n^2)<br>
+            Average time complexity 	O(n^2)<br>
+            Best-case time complexity	O(n^2)<br>
+            Worst-case space complexity	O(1)</p></B>
+            <br>
+
+            <h2>MODIFIED BUBBLE SORT</h2>
+            <p>A better version of bubble sort, known as modified bubble sort,
+                 includes a flag that is set if an exchange is made after an entire pass over the array. 
+                 If no exchange is made, then it should be clear that the array is already in order 
+                 because no two elements need to be switched. In that case, the sort should end.Modified
+                  bubble sort keeps count of the number of adjacent inversions in each pass and when there are
+                 no adjacent inversions the algorithm halts as the list will be sorted if there are no adjacent inversions.</p>
+                 <h3> Performance</h3>
+                 <B><p>Worst-case time complexity	O(n^2)<br>
+                     Average time complexity 	O(n^2)<br>
+                     Best-case time complexity	O(n)<br>
+                     Worst-case space complexity	O(1)</p></B>
+                     <br>
+
+                     <h2>QUICK SORT</h2>
+                 <p>Quick sort is a highly efficient sorting algorithm and is based on partitioning of array of data into
+                     smaller arrays. A large array is partitioned into two arrays one of which holds values smaller than the
+                      specified value, say pivot, based on which the partition is made and another array holds values greater 
+                      than the pivot value. Quicksort partitions an array and then calls itself recursively twice to sort the 
+                      two resulting subarrays. This algorithm is quite efficient for large-sized data.</p>
+                      <h3> Performance</h3>
+                      <B><p>Worst-case time complexity	O(n^2)<br>
+                          Average time complexity 	O(nlogn)<br>
+                          Best-case time complexity	O(nlogn)<br>
+                          Worst-case space complexity	O(n)</p></B>
+                          <br>
+
+                          <h2>MERGE SORT</h2>
+                          <p>Merge sort is similar to the quick sort algorithm as it uses the divide and conquer approach to sort the
+                               elements. It is one of the most popular and efficient sorting algorithm. It divides the given list into
+                                two equal halves, calls itself for the two halves and then merges the two sorted halves. We have to
+                                 define the merge() function to perform the merging.</p>
+                                 <h3> Performance</h3>
+                     <B> <p>Worst-case time complexity	O(nlogn)<br>
+                          Average time complexity 	O(nlogn)<br>
+                          Best-case time complexity	O(nlogn)<br>
+                          Worst-case space complexity	O(n)</p></B>
+                          <br>
+
+
+                
+
+
+        <p10>
+          <br>
+            Made by BASATI YASASWI <a href="https://github.com/yasaswikiran/sortvizualizer.git" target="_blank">Yasaswi </a>. 
+            (<a href="https://github.com/yasaswikiran/sortvizualizer.git" target="_blank">Github repository</a>)
+        </p10>
+ 
+    <script>
+        if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+                .register('sw.js')
+                .then(function() { console.log("Service Worker Registered"); })
+                .catch(err => console.log('Service Worker not registered', err));
+        }
+    </script>
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/bubbleSort.js"></script>
+    <script src="./scripts/insertionSort.js"></script>
+    <script src="./scripts/selectionSort.js"></script>
+    <script src="./scripts/modifiedBubbleSort.js"></script>
+    <script src="./scripts/quickSort.js"></script>
+    <script src="./scripts/mergeSort.js"></script>
+ 
+
+</body>
+</html>
